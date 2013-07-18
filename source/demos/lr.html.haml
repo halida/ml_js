@@ -1,25 +1,50 @@
-.input
+.text
+  %h1 Simple Linear Regression In Javascript
+
+  %p
+    Create Fake Data:
+    Y(x) =
+    = input_tag :text, class: 'fake_a', value: '0.3'
+    * X + 
+    = input_tag :text, class: 'fake_b', value: '0.2'
+    + random
+    = input_tag :text, class: 'fake_r', value: '5'
+    = input_tag :button, value: "Fake It", class: 'fake'
+    Or you can input your own dataset below:
+    
   %p
     X
-    %textarea.x
-      = (1..100).to_a.join(", ")
+    %textarea.xs
 
   %p
     Y
-    %textarea.y
-      = (1..100).to_a.map{|x| (x*0.3 - 2 + rand*5).round(2)}.join(", ")
+    %textarea.ys
 
   %p
-    = input_tag :button, value: "Plot", class: 'plot'
+    Then use
+    = link_to "gradient descent", "https://share.coursera.org/wiki/index.php/ML:Linear_Regression_with_One_Variable", target: :_blank
+    to fit this dataset, with parameters
+    Alpha:
+    = input_tag :text, class: 'alpha', value: '0.0003'
+    Count:
+    = input_tag :text, class: 'count', value: '400'
     = input_tag :button, value: "Fit", class: 'fit'
+
+  %p
+    Result is:
+    h(x) = 
+    %span.result_a 0
+    * x + 
+    %span.result_b 0
 
 .display
   #plot_placeholder
-
 
 :sass
   #plot_placeholder
     width: 800px
     height: 300px
+  input[type=text]
+    width: 50px
 
 = run :init_lr
