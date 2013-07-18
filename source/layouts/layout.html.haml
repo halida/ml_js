@@ -36,6 +36,12 @@
   %body{class: current_page.data.body_class || 'page'}
 
     .content= yield
+    .footer
+      Created by 
+      = link_to "@linjunhalida", "https://twitter.com/linjunhalida", target: :_blank
+      , You can Fork me
+      = link_to "here", "https://github.com/halida/ml_js", target: :_blank
+      = "."
 
     -# Javascripts
     = javascript_include_tag 'static'
