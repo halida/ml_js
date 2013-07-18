@@ -1,0 +1,25 @@
+.input
+  %p
+    X
+    %textarea.x
+      = (1..100).to_a.join(", ")
+
+  %p
+    Y
+    %textarea.y
+      = (1..100).to_a.map{|x| (x*0.3 - 2 + rand*5).round(2)}.join(", ")
+
+  %p
+    = input_tag :button, value: "Plot", class: 'plot'
+    = input_tag :button, value: "Fit", class: 'fit'
+
+.display
+  #plot_placeholder
+
+
+:sass
+  #plot_placeholder
+    width: 800px
+    height: 300px
+
+= run :init_lr

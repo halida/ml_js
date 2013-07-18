@@ -1,1 +1,16 @@
 @import "variables", "mixins", "fonts"
+
+@import "compass/css3/box-shadow"
+
+html, body
+  background: #aaa
+  height: 100%
+
+.content
+  margin: 20px auto
+  padding: 20px
+  width: 980px
+  min-height: 400px
+  background: #eee
+  +box-shadow($c_border 0px 0px 3px 3px)
+

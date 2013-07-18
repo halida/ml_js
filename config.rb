@@ -14,6 +14,8 @@
 ###
 # Page options, layouts, aliases and proxies
 ###
+page "/demos/*"
+
 
 # Per-page layout changes:
 #
@@ -33,7 +35,6 @@
 #   @which_fake_page = "Rendering a fake page with a variable"
 # end
 
-
 ###
 # Helpers
 ###
@@ -47,6 +48,12 @@
 #     "Helping"
 #   end
 # end
+
+helpers do
+  def run name
+    input_tag :hidden, data: {function: name}
+  end
+end
 
 set :css_dir, 'stylesheets'
 
